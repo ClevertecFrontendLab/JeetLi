@@ -9,10 +9,12 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
 .side-logo_wrapper {
     padding: 50px 0 30px;
 }
 .side-button_descktop {
+    z-index: 1;
     position: absolute;
     top: 50vh;
     right: -42px;
@@ -24,6 +26,7 @@
     cursor: pointer;
 }
 .side-button_mobile {
+    z-index: 1;
     position: absolute;
     top: 10vh;
     right: -48px;
@@ -45,6 +48,10 @@
 }
 
 @media (max-width: 480px) {
+    #root > section > aside {
+        position: fixed;
+        z-index: 1;
+    }
     .img-cleverfit {
         padding: 16px 17px;
     }
@@ -78,7 +85,7 @@
     .ant-menu-title-content {
         margin: 0 !important;
     }
-    .side-button {
-        top: 10vh;
+    .side-button_mobile {
+        top: 6vh;
     }
 }

@@ -66,7 +66,6 @@ export const SideBar: React.FC = () => {
 
         return () => {
             window.removeEventListener('resize', handleResize);
-            console.log(isMobile);
         };
     }, []);
 
@@ -76,7 +75,7 @@ export const SideBar: React.FC = () => {
             collapsedWidth={isMobile && collapsed ? 0 : 64}
             style={{
                 height: '100%',
-                position: 'fixed',
+
             }}
             theme='light'
             collapsible
