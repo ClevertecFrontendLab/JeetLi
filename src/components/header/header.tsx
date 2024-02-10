@@ -34,7 +34,6 @@ export const HeaderComponent: React.FC = () => (
     <PageHeader
         style={{ backgroundColor: '#F0F5FF' }}
         className='site-page-header'
-    
         breadcrumb={{ routes }}
     >
         <Content

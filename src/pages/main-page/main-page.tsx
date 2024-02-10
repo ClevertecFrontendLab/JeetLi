@@ -9,6 +9,7 @@ import { SideBar } from '@components/side-bar/index';
 import { HeaderComponent } from '@components/header';
 import { FooterComponent } from '@components/footer';
 
+
 export const MainPage: React.FC = () => {
     return (
         <>
@@ -24,7 +25,7 @@ export const MainPage: React.FC = () => {
                 <Layout style={{ background: 'transparent' }}>
                     <HeaderComponent />
                     <Content>
-                        Content
+                 
                         <FooterComponent />
                     </Content>
                 </Layout>

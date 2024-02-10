@@ -1,53 +1,11 @@
-import {
-    CalendarTwoTone,
-    HeartFilled,
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    ProfileOutlined,
-    TrophyFilled,
-} from '@ant-design/icons';
-import { CleverfitLogo, FitLogo, ExitIcon } from '../ui/graphics';
-
-import type { MenuProps } from 'antd';
-import { Menu } from 'antd';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { CleverfitLogo, FitLogo } from '../ui/graphics';
+import { MenuComponent } from '@components/common/nav-items/index';
 import React, { useEffect, useState } from 'react';
 import './side-bar.css';
 import { Layout } from 'antd';
 
-type MenuItem = Required<MenuProps>['items'][number];
-
-function getItem(
-    label: React.ReactNode,
-    key: React.Key,
-    icon?: React.ReactNode | string,
-    children?: MenuItem[],
-    type?: 'group',
-    style?: React.CSSProperties,
-): MenuItem {
-    return {
-        key,
-        icon,
-        children,
-        label,
-        type,
-        style,
-    } as MenuItem;
-}
-
 const { Sider } = Layout;
-
-const items: MenuItem[] = [
-    getItem('Календарь', '1', <CalendarTwoTone twoToneColor='#061178' />),
-    getItem('Тренировки', '2', <HeartFilled style={{ color: '#061178' }} />),
-    getItem('Достижения', '3', <TrophyFilled style={{ color: '#061178' }} />),
-    getItem('Профиль', '4', <ProfileOutlined style={{ color: '#061178' }} />),
-];
-const exitItem: MenuItem[] = [
-    getItem('Выход', '5', <ExitIcon />, undefined, undefined, {
-        borderTop: ' 1px solid rgb(240, 240, 240)',
-        position: 'relative',
-    }),
-];
 
 export const SideBar: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
@@ -75,7 +33,6 @@ export const SideBar: React.FC = () => {
             collapsedWidth={isMobile && collapsed ? 0 : 64}
             style={{
                 height: '100%',
-
             }}
             theme='light'
             collapsible
@@ -87,15 +44,9 @@ export const SideBar: React.FC = () => {
                 <div className='side-logo_wrapper'>
                     {collapsed ? <FitLogo /> : <CleverfitLogo />}
                 </div>
-                <Menu
-                    defaultSelectedKeys={['1']}
-                    defaultOpenKeys={['sub1']}
-                    mode='inline'
-                    theme='light'
-                    items={items}
-                />
+                <MenuComponent itemIds={['1', '2', '3', '4']} />;
             </div>
-            <Menu mode='inline' theme='light' items={exitItem} />
+            <MenuComponent itemIds={['5']} />;
             {isMobile ? (
                 <div
                     className='side-button_mobile'
@@ -116,3 +67,4 @@ export const SideBar: React.FC = () => {
         </Sider>
     );
 };
+
