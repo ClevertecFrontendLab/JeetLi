@@ -14,9 +14,11 @@ export const CardComponent: React.FC<CardProps> = ({
     content,
     additionalContent,
     style,
+    additionalUl,
 }) => {
     return (
         <article style={style} className={tag}>
+            {additionalUl && <article>{additionalUl}</article>}
             {additionalTitle && (
                 <Title style={style} className={tagTitle}>
                     {additionalTitle}

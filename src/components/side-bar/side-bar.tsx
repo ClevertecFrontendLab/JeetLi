@@ -1,8 +1,8 @@
+import './side-bar.css';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { CleverfitLogo, FitLogo } from '../ui/graphics';
 import { MenuComponent } from '@components/common/nav-items/index';
 import React, { useEffect, useState } from 'react';
-import './side-bar.css';
 import { Layout } from 'antd';
 
 const { Sider } = Layout;
@@ -29,11 +29,9 @@ export const SideBar: React.FC = () => {
 
     return (
         <Sider
+            className='sider-layout'
             width={isMobile ? 106 : 200}
             collapsedWidth={isMobile && collapsed ? 0 : 64}
-            style={{
-                height: '100vh',
-            }}
             theme='light'
             collapsible
             collapsed={collapsed}
@@ -44,9 +42,9 @@ export const SideBar: React.FC = () => {
                 <div className='side-logo_wrapper'>
                     {collapsed ? <FitLogo /> : <CleverfitLogo />}
                 </div>
-                <MenuComponent itemIds={['1', '2', '3', '4']} />
+                <MenuComponent itemIds={['1', '2', '3', '4']} color='#061178' />
             </div>
-            <MenuComponent itemIds={['5']} />
+            <MenuComponent itemIds={['5']} color='#000000' />
             {isMobile ? (
                 <div
                     className='side-button_mobile'

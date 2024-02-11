@@ -10,4 +10,9 @@ export interface CardProps {
     content?: string | React.ReactNode;
     additionalContent?: string;
     style?: React.CSSProperties;
+    additionalUl?: React.ReactNode;
+}
+export interface MenuComponentProps {
+    itemIds: string[];
+    color: string;
 }

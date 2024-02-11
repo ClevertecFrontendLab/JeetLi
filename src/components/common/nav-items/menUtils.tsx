@@ -3,12 +3,20 @@ import { MenuItem } from '../../../models/types';
 
 import { CalendarTwoTone, HeartFilled, ProfileOutlined, TrophyFilled } from '@ant-design/icons';
 
-export const getMenuItems = (itemIds: string[]): MenuItem[] => {
+export const getMenuItems = (itemIds: string[], style: string): MenuItem[] => {
     const allItems: MenuItem[] = [
-        { key: 1, label: 'Календарь', icon: <CalendarTwoTone twoToneColor='#061178' /> },
-        { key: 2, label: 'Тренировки', icon: <HeartFilled style={{ color: '#061178' }} /> },
-        { key: 3, label: 'Достижения', icon: <TrophyFilled style={{ color: '#061178' }} /> },
-        { key: 4, label: 'Профиль', icon: <ProfileOutlined style={{ color: '#061178' }} /> },
+        {
+            key: 1,
+            label: 'Календарь',
+            icon: <CalendarTwoTone twoToneColor={style} />,
+        },
+        {
+            key: 2,
+            label: 'Тренировки',
+            icon: <HeartFilled style={{ color: style }} />,
+        },
+        { key: 3, label: 'Достижения', icon: <TrophyFilled style={{ color: style }} /> },
+        { key: 4, label: 'Профиль', icon: <ProfileOutlined style={{ color: style }} /> },
         {
             key: 5,
             label: 'Выход',

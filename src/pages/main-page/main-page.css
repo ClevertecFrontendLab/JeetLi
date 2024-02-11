@@ -1,6 +1,6 @@
-#root > section > section > main {
+.content-layout {
     width: 752px;
-    padding-left: 24px;
+    margin-left: 24px;
 }
 .main-layout {
     max-width: 1440px;
@@ -8,15 +8,39 @@
 }
 .card-description {
     margin-top: 24px;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 24px;
 }
-#root > section > section > main > article > span {
-    color: #061178;
+.card-description > article > ul {
+    padding: 0;
+    list-style-type: none;
 }
+#root
+    > section
+    > section
+    > main
+    > div
+    > article:nth-child(2)
+    > div
+    > ul
+    > li
+    > span.anticon.anticon-calendar.ant-menu-item-icon
+    > svg
+    > path:nth-child(1) {
+    fill: #2f54eb;
+}
+.card-description > article > ul > li {
+    color: #061178;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
 .card-title {
     margin-top: 24px;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 24px;
 }
 #root > section > section > main > article.card-title > h1 {
@@ -24,26 +48,95 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 130%;
-    letter-spacing: 0%;
+    word-spacing: 2px;
     text-align: left;
+    margin: 0;
 }
 .content-menu_wrapper {
     margin-top: 24px;
     display: flex;
     justify-content: space-between;
 }
-.card-health {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
+#root > section > section > main > div > article:nth-child(1) > div > ul {
+    border-right: 0;
 }
-.card-calendar {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
+#root > section > section > main > div > article:nth-child(2) > div > ul {
+    border-right: 0;
 }
-.card-profile {
-    background-color: #ffffff;
-    display: flex;
+#root > section > section > main > div > article:nth-child(3) > div > ul {
+    border-right: 0;
+}
+.card-item {
+    background-color: #fff;
     flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 101px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.card-item_text {
+    text-align: center;
+    width: 100%;
+    padding: 12px 24px;
+    border-bottom: 1px solid #f0f0f0;
+}
+@media (max-width: 1024px) {
+    .content-layout {
+        width: 578px;
+        margin-right: 24px;
+    }
+    .card-item {
+        width: 182px;
+        height: 122px;
+    }
+    .card-item_text {
+        text-align: left;
+    }
+    #root > section > section > main > article.card-title > h1 {
+        color: rgb(38, 38, 38);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 130%;
+        word-spacing: 3px;
+        text-align: left;
+    }
+}
+@media (max-width: 525px) {
+    .content-layout {
+        width: 328px;
+        margin: 0 16px;
+    }
+    .card-description {
+        padding: 16px;
+    }
+    .content-menu_wrapper {
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-title {
+        padding: 16px;
+    }
+    .card-item {
+        width: 328px;
+        height: 101px;
+    }
+    .card-item_text {
+        text-align: center;
+    }
+    #root > section > section > main > div > article > div > ul > li > span.ant-menu-item-icon {
+        padding-right: 8px;
+        color: #2f54eb;
+    }
+    #root > section > section > main > article.card-title > h1 {
+        color: rgb(38, 38, 38);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 130%;
+        word-spacing: 3px;
+        text-align: left;
+    }
 }

@@ -22,41 +22,60 @@ export const MainPage: React.FC = () => {
                 }}
             >
                 <SideBar />
-
                 <Layout style={{ background: 'transparent' }}>
                     <HeaderComponent />
-                    <Content >
+                    <Content className='content-layout'>
                         <CardComponent
                             tag='card-description'
-                            tagText='card-text'
-                            additionalText='С CleverFit ты сможешь: — планировать свои тренировки на календаре, выбирая тип и уровень нагрузки; — отслеживать свои достижения в разделе статистики, сравнивая свои результаты с нормами и рекордами; — создавать свой профиль, где ты можешь загружать свои фото, видео и отзывы о тренировках; — выполнять расписанные тренировки для разных частей тела, следуя подробным инструкциям и советам профессиональных тренеров.'
+                            additionalUl={
+                                <ul>
+                                    <li>С CleverFit ты сможешь: </li>
+                                    <li>
+                                        — планировать свои тренировки на календаре, выбирая тип и
+                                        уровень нагрузки;
+                                    </li>
+                                    <li>
+                                        — отслеживать свои достижения в разделе статистики,
+                                        сравнивая свои результаты c нормами и рекордами;
+                                    </li>
+                                    <li>
+                                        — создавать свой профиль, где ты можешь загружать свои фото,
+                                        видео и отзывы o тренировках;
+                                    </li>
+                                    <li>
+                                        — выполнять расписанные тренировки для разных частей тела,
+                                        следуя подробным инструкциям и советам профессиональных
+                                        тренеров.
+                                    </li>
+                                </ul>
+                            }
                         />
                         <CardComponent
                             tag='card-title'
                             tagTitle='someTitle'
-                            additionalTitle='CleverFit — это не просто приложение, а твой личный помощник в мире фитнеса. Не откладывай на завтра — начни тренироваться уже сегодня!'
+                            additionalTitle='CleverFit — это не просто приложение, а твой личный помощник в мире фитнеса. Не откладывай на завтра — начни тренироваться уже сегодня!'
                         />
                         <div className='content-menu_wrapper'>
                             <CardComponent
-                                tag='card-health'
-                                tagText='card-healt_text'
+                                tag='card-item'
+                                tagText='card-item_text'
                                 additionalText='Расписать тренировки'
                                 additionalDiv
-                                content={<MenuComponent itemIds={['2']} />}
+                                content={<MenuComponent itemIds={['2']} color='#2F54EB' />}
                             />
                             <CardComponent
-                                tag='card-health'
-                                tagText='card-calendar_text'
+                                tag='card-item'
+                                tagText='card-item_text'
                                 additionalText='Назначить календарь'
                                 additionalDiv
-                                content={<MenuComponent itemIds={['1']} />}
+                                content={<MenuComponent itemIds={['1']} color='#2F54EB' />}
                             />
                             <CardComponent
-                                tag='card-health'
-                                tagText='card-profile_text'
+                                tag='card-item'
+                                tagText='card-item_text'
                                 additionalText='Заполнить профиль'
                                 additionalDiv
-                                content={<MenuComponent itemIds={['4']} />}
+                                content={<MenuComponent itemIds={['4']} color='#2F54EB' />}
                             />
                         </div>
                         <FooterComponent />

@@ -3,12 +3,10 @@ import { Menu } from 'antd';
 import { MenuItem } from '../../../models/types';
 import { getMenuItems } from './menUtils';
 
-interface MenuComponentProps {
-    itemIds: string[];
-}
+import { MenuComponentProps } from 'src/models/interface';
 
-export const MenuComponent: React.FC<MenuComponentProps> = ({ itemIds }) => {
-    const items: MenuItem[] = getMenuItems(itemIds);
+export const MenuComponent: React.FC<MenuComponentProps> = ({ itemIds, color }) => {
+    const items: MenuItem[] = getMenuItems(itemIds, color);
 
     return (
         <Menu
