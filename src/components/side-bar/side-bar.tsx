@@ -32,7 +32,7 @@ export const SideBar: React.FC = () => {
             width={isMobile ? 106 : 200}
             collapsedWidth={isMobile && collapsed ? 0 : 64}
             style={{
-                height: '100%',
+                height: '100vh',
             }}
             theme='light'
             collapsible
@@ -44,9 +44,9 @@ export const SideBar: React.FC = () => {
                 <div className='side-logo_wrapper'>
                     {collapsed ? <FitLogo /> : <CleverfitLogo />}
                 </div>
-                <MenuComponent itemIds={['1', '2', '3', '4']} />;
+                <MenuComponent itemIds={['1', '2', '3', '4']} />
             </div>
-            <MenuComponent itemIds={['5']} />;
+            <MenuComponent itemIds={['5']} />
             {isMobile ? (
                 <div
                     className='side-button_mobile'
@@ -67,4 +67,3 @@ export const SideBar: React.FC = () => {
         </Sider>
     );
 };
-

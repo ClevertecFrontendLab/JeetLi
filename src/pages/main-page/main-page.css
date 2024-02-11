@@ -1,17 +1,49 @@
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
-}
-
-.card {
-    padding: 2em;
-}
-
-.read-the-docs {
-    color: #888;
+#root > section > section > main {
+    width: 752px;
+    padding-left: 24px;
 }
 .main-layout {
     max-width: 1440px;
     background-image: url('../../assets/img/Main-page_light.png');
+}
+.card-description {
+    margin-top: 24px;
+    background-color: #ffffff;
+    padding: 24px;
+}
+#root > section > section > main > article > span {
+    color: #061178;
+}
+.card-title {
+    margin-top: 24px;
+    background-color: #ffffff;
+    padding: 24px;
+}
+#root > section > section > main > article.card-title > h1 {
+    color: rgb(38, 38, 38);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.content-menu_wrapper {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+.card-health {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+.card-calendar {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+.card-profile {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
 }

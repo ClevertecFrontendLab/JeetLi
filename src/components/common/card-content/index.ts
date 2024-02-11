@@ -1,1 +1,1 @@
-import { CardComponent } from './card-component';
+export { CardComponent } from './card-component';

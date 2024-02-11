@@ -1,19 +1,8 @@
 import { Typography } from 'antd/lib';
-
+import { CardProps } from 'src/models/interface';
 const { Title, Text } = Typography;
 
 import React from 'react';
-
-interface CardProps {
-    tag: string;
-    tagTitle?: string;
-    tagText?: string;
-    additionalTitle?: string;
-    additionalText?: string;
-    title?: string;
-    text?: string;
-    additionalDiv?: boolean;
-}
 
 export const CardComponent: React.FC<CardProps> = ({
     tag,
@@ -22,12 +11,28 @@ export const CardComponent: React.FC<CardProps> = ({
     additionalTitle,
     additionalText,
     additionalDiv,
+    content,
+    additionalContent,
+    style,
 }) => {
     return (
-        <article className={tag}>
-            {additionalTitle && <Title className={tagTitle}>{additionalTitle}</Title>}
-            {additionalText && <Text className={tagText}>{additionalText}</Text>}
-            {additionalDiv && <div>{additionalDiv}</div>}
+        <article style={style} className={tag}>
+            {additionalTitle && (
+                <Title style={style} className={tagTitle}>
+                    {additionalTitle}
+                </Title>
+            )}
+            {additionalText && (
+                <Text style={style} className={tagText}>
+                    {additionalText}
+                </Text>
+            )}
+            {additionalDiv && (
+                <div>
+                    {content}
+                    {additionalContent}
+                </div>
+            )}
         </article>
     );
 };
