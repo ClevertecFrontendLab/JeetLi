@@ -4,11 +4,11 @@ import { CleverfitLogo, FitLogo } from '../ui/graphics';
 import { MenuComponent } from '@components/common/nav-items/index';
 import React, { useEffect, useState } from 'react';
 import { Layout } from 'antd';
+import { collapsedType } from 'src/models/types';
 
 const { Sider } = Layout;
 
-export const SideBar: React.FC = () => {
-    const [collapsed, setCollapsed] = useState(false);
+export const SideBar: React.FC<collapsedType> = ({ collapsed, setCollapsed }) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
 
     const toggleCollapsed = () => {

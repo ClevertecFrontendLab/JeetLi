@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './main-page.css';
 import img from '../../assets/img/Main-page_light.png';
 import { Layout } from 'antd';
@@ -12,10 +12,12 @@ import { CardComponent } from '@components/common/card-content';
 import { MenuComponent } from '@components/common/nav-items';
 
 export const MainPage: React.FC = () => {
+    const [collapsed, setCollapsed] = useState(false);
+
     return (
         <>
             <Layout className='main-layout'>
-                <SideBar />
+                <SideBar collapsed={collapsed} setCollapsed={setCollapsed} />
                 <Layout
                     style={{
                         background: ` no-repeat center/cover url(${img})`,
@@ -77,7 +79,7 @@ export const MainPage: React.FC = () => {
                             />
                         </div>
                     </Content>
-                    <FooterComponent />
+                    <FooterComponent collapsed={collapsed} setCollapsed={setCollapsed} />
                 </Layout>
             </Layout>
         </>
