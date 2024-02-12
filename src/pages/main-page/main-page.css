@@ -13,6 +13,10 @@
 .card-description > article > ul {
     padding: 0;
     list-style-type: none;
+    letter-spacing: 0.5px;
+}
+#root > section > section > main > div > article > div > ul > li > span.ant-menu-title-content {
+    color: #2f54eb;
 }
 #root
     > section
@@ -47,7 +51,8 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 130%;
-    word-spacing: 2px;
+    word-spacing: 0.6px;
+    letter-spacing: 0.4px;
     text-align: left;
     margin: 0;
 }
@@ -113,9 +118,10 @@
     .content-layout {
         width: 328px;
         margin: 0 16px;
+        padding: 0;
     }
     .card-description {
-        padding: 16px;
+        padding: 13px 16px 27px 16px;
     }
     .content-menu_wrapper {
         display: flex;
