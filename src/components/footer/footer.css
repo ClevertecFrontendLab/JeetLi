@@ -53,14 +53,29 @@
     letter-spacing: 0%;
     text-align: center;
 }
-
+#root > section > section > footer > article > div > button > span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: center;
+}
 @media (max-width: 1024px) {
     #root > section > section > footer {
         padding: 261px 24px 42px;
     }
+    .footer-layout_collapsed {
+        padding: 386px 24px 41px !important;
+    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 525px) {
+    #root > section > section > footer > article > h1 {
+        text-align: center;
+    }
+    #root > section > section > footer > article > span {
+        text-align: center;
+    }
     #root > section > section > footer {
         padding: 24px 16px 42px;
     }
@@ -72,5 +87,11 @@
     }
     .footer-card {
         width: 100%;
+    }
+    .footer-card-button_wrapper {
+        justify-content: space-around;
+    }
+    .footer-layout_collapsed {
+        padding: 24px 16px 42px !important;
     }
 }
