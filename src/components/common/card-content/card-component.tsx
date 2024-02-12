@@ -30,7 +30,7 @@ export const CardComponent: React.FC<CardProps> = ({
                 </Text>
             )}
             {additionalDiv && (
-                <div>
+                <div className={additionalDiv}>
                     {content}
                     {additionalContent}
                 </div>

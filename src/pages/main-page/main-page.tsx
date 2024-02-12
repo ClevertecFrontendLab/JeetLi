@@ -14,15 +14,13 @@ import { MenuComponent } from '@components/common/nav-items';
 export const MainPage: React.FC = () => {
     return (
         <>
-            <Layout
-                className='main-layout'
-                style={{
-                    backgroundImage: `url(${img})`,
-                    backgroundPosition: 'center',
-                }}
-            >
+            <Layout className='main-layout'>
                 <SideBar />
-                <Layout style={{ background: 'transparent' }}>
+                <Layout
+                    style={{
+                        background: ` no-repeat center/cover url(${img})`,
+                    }}
+                >
                     <HeaderComponent />
                     <Content className='content-layout'>
                         <CardComponent
@@ -60,26 +58,26 @@ export const MainPage: React.FC = () => {
                                 tag='card-item'
                                 tagText='card-item_text'
                                 additionalText='Расписать тренировки'
-                                additionalDiv
+                                additionalDiv='card-item-layout'
                                 content={<MenuComponent itemIds={['2']} color='#2F54EB' />}
                             />
                             <CardComponent
                                 tag='card-item'
                                 tagText='card-item_text'
                                 additionalText='Назначить календарь'
-                                additionalDiv
+                                additionalDiv='card-item-layout'
                                 content={<MenuComponent itemIds={['1']} color='#2F54EB' />}
                             />
                             <CardComponent
                                 tag='card-item'
                                 tagText='card-item_text'
                                 additionalText='Заполнить профиль'
-                                additionalDiv
+                                additionalDiv='card-item-layout'
                                 content={<MenuComponent itemIds={['4']} color='#2F54EB' />}
                             />
                         </div>
-                        <FooterComponent />
                     </Content>
+                    <FooterComponent />
                 </Layout>
             </Layout>
         </>

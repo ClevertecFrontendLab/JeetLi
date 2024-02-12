@@ -6,9 +6,9 @@ export interface CardProps {
     additionalText?: string;
     title?: string;
     text?: string;
-    additionalDiv?: boolean;
+    additionalDiv?: string;
     content?: string | React.ReactNode;
-    additionalContent?: string;
+    additionalContent?: string | React.ReactNode;
     style?: React.CSSProperties;
     additionalUl?: React.ReactNode;
 }

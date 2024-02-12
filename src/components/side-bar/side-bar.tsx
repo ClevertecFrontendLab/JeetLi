@@ -30,7 +30,7 @@ export const SideBar: React.FC = () => {
     return (
         <Sider
             className='sider-layout'
-            width={isMobile ? 106 : 200}
+            width={isMobile ? 106 : 208}
             collapsedWidth={isMobile && collapsed ? 0 : 64}
             theme='light'
             collapsible
@@ -38,7 +38,7 @@ export const SideBar: React.FC = () => {
             onCollapse={toggleCollapsed}
             trigger={null}
         >
-            <div className='side-nav_wrapper' style={collapsed ? { width: 64 } : { width: 200 }}>
+            <div className='side-nav_wrapper' style={collapsed ? { width: 64 } : { width: 208 }}>
                 <div className='side-logo_wrapper'>
                     {collapsed ? <FitLogo /> : <CleverfitLogo />}
                 </div>

@@ -1,8 +1,36 @@
 import React from 'react';
-import { Layout } from 'antd';
+import './footer.css';
+import { Button, Layout } from 'antd';
+import { CardComponent } from '@components/common/card-content';
+import { AndroidFilled, AppleFilled } from '@ant-design/icons';
 
 const { Footer } = Layout;
 
+
 export const FooterComponent: React.FC = () => {
-    return <Footer style={{ background: 'transparent' }}>Footer</Footer>;
+    return (
+        <Footer className='footer-layout' style={{ background: 'transparent' }}>
+            <Button type='link'>Смотреть отзывы</Button>
+            <CardComponent
+                tag='footer-card'
+                style={{ backgroundColor: '#FFF' }}
+                additionalTitle='Скачать на телефон'
+                tagTitle='footer-card_title'
+                additionalText='Доступен в PRO-тарифе'
+                additionalDiv='footer-card-button_wrapper'
+                content={
+                    <Button style={{ color: '#000000D9' }} type='link'>
+                        <AndroidFilled />
+                        Apple OS
+                    </Button>
+                }
+                additionalContent={
+                    <Button style={{ color: '#000000D9' }} type='link'>
+                        <AppleFilled />
+                        Android OS
+                    </Button>
+                }
+            />
+        </Footer>
+    );
 };

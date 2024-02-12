@@ -1,29 +1,69 @@
-.header {
+.header-content {
+    padding-top: 5px;
+}
+.header-button-text {
+    letter-spacing: 0.6px;
+}
+#root > section > section > header > div > nav > ol > li > span.ant-breadcrumb-link > span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    text-align: left;
+}
+#root > section > section > header {
     width: 100%;
+    height: auto;
+    padding: 0;
+}
+
+#root > section > section > header > div {
+    padding: 13px 24px 7px;
     height: 100%;
 }
-#root > section > section > div {
-    padding: 16px 24px;
+
+#root > section > section > header > div > div {
+    padding-top: 5px;
 }
-#root > section > section > div > div.ant-page-header-content > div > div:nth-child(2) > button {
+
+#root
+    > section
+    > section
+    > header
+    > div
+    > div.ant-page-header-content
+    > div
+    > div:nth-child(2)
+    > button {
     background-color: #f0f5ff;
     border: none;
 }
-#root > section > section > div > div > div > div:nth-child(1) {
-    padding-top: 8px;
-}
-#root > section > section > div > div.ant-page-header-content > div > div:nth-child(1) > h1 {
+
+#root
+    > section
+    > section
+    > header
+    > div
+    > div.ant-page-header-content
+    > div
+    > div:nth-child(1)
+    > h1 {
     color: rgb(38, 38, 38);
     font-size: 38px;
     font-weight: 700;
     line-height: 130%;
-    letter-spacing: 0%;
+    letter-spacing: 1px;
     text-align: left;
 }
+
 @media (max-width: 1024px) {
+    #root > section > section > header > div {
+        padding: 13px 24px 12px;
+    }
     #root
         > section
         > section
+        > header
         > div
         > div.ant-page-header-content
         > div
@@ -33,34 +73,54 @@
         > svg {
         display: none;
     }
-    #root > section > section > div > div.ant-page-header-content > div > div:nth-child(1) > h1 {
+    #root
+        > section
+        > section
+        > header
+        > div
+        > div.ant-page-header-content
+        > div
+        > div:nth-child(1)
+        > h1 {
         color: rgb(38, 38, 38);
         font-size: 24px;
         font-weight: 500;
         line-height: 130%;
-        letter-spacing: 0%;
+        letter-spacing: 0px;
+        word-spacing: 7px;
         text-align: left;
     }
 }
 @media (max-width: 525px) {
-    #root > section > section > div {
-        padding: 16px 24px;
+    #root > section > section > header > div {
+        padding: 13px 16px 16px 25px;
     }
-    #root > section > section > div > div.ant-page-header-content > div > div:nth-child(1) > h1 {
+    #root
+        > section
+        > section
+        > header
+        > div
+        > div.ant-page-header-content
+        > div
+        > div:nth-child(1)
+        > h1 {
         color: rgb(38, 38, 38);
         font-size: 20px;
         font-weight: 500;
         line-height: 130%;
-        letter-spacing: 0%;
+        padding-top: 3px;
+        letter-spacing: 0.6px;
+        word-spacing: 0px;
         text-align: left;
     }
 
-    #root > section > section > div > div > div > div:nth-child(1) {
+    #root > section > section > header > div > div > div > div:nth-child(1) {
         padding: 0;
     }
     #root
         > section
         > section
+        > header
         > div
         > div.ant-page-header-content
         > div
@@ -87,6 +147,7 @@
     #root
         > section
         > section
+        > header
         > div
         > div.ant-page-header-content
         > div
@@ -99,6 +160,7 @@
     #root
         > section
         > section
+        > header
         > div
         > div.ant-page-header-content
         > div
@@ -107,7 +169,7 @@
         > span.ant-typography.header-button-text {
         display: none;
     }
-    #root > section > section > div > div {
-        padding: 6px 0;
+    #root > section > section > header > div > div {
+        padding: 0;
     }
 }
