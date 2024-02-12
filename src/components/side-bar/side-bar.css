@@ -71,7 +71,7 @@
     .side-nav_wrapper {
         width: 106px !important;
     }
-    .ant-menu-item {
+    #root > section > aside > div > div.side-nav_wrapper > ul > li {
         padding: 0 0 0 10px !important;
     }
     #root > section > aside > div > div.side-nav_wrapper > ul > li > span.ant-menu-item-icon {
@@ -90,9 +90,8 @@
     #root > section > aside > div > div.side-nav_wrapper > ul {
         padding-left: 0;
     }
-
-    .ant-menu-item {
-        padding: 0 !important;
+    #root > section > aside > div > div.side-nav_wrapper > ul > li {
+        margin-bottom: 8px;
     }
     .ant-menu-title-content {
         margin: 0 !important;
