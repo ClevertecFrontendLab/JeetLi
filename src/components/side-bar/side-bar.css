@@ -52,7 +52,8 @@
 
 @media (max-width: 525px) {
     #root > section > aside {
-        position: fixed;
+        height: 100%;
+        position: absolute;
     }
     .sider-layout {
         height: 100vh;
@@ -73,6 +74,9 @@
     }
     #root > section > aside > div > div.side-nav_wrapper > ul > li {
         padding: 0 0 0 10px !important;
+    }
+    #root > section > aside > div {
+        height: 100vh;
     }
     #root > section > aside > div > div.side-nav_wrapper > ul > li > span.ant-menu-item-icon {
         display: none;
@@ -97,6 +101,6 @@
         margin: 0 !important;
     }
     .side-button_mobile {
-        top: 6vh;
+        top: 10px;
     }
 }
