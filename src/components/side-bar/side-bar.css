@@ -1,0 +1,112 @@
+.ant-layout-sider-children {
+    display: grid;
+    height: 100%;
+    align-content: space-between;
+}
+.sider-layout {
+    height: auto;
+}
+#root > section > aside > div > ul {
+    border-right: 0;
+}
+#root > section > aside > div > ul > li {
+    white-space: normal;
+}
+.side-nav_wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.side-logo_wrapper {
+    padding: 30px 0 48px;
+}
+#root > section > aside > div > div.side-nav_wrapper > ul > li {
+    margin-bottom: 17px;
+    padding-left: 17px !important;
+}
+.side-button_descktop {
+    z-index: 1;
+    position: absolute;
+    top: 50vh;
+    right: -42px;
+    background-image: url(/src/assets/img/Rectangle1440.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000;
+    padding: 25px;
+    cursor: pointer;
+}
+.side-button_mobile {
+    z-index: 1;
+    position: absolute;
+    top: 10vh;
+    right: -48px;
+    background-image: url(/src/assets/img/Rectangle376.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000;
+    padding: 25px;
+    cursor: pointer;
+}
+.img-cleverfit {
+    padding: 14px 46px 17px 29px;
+}
+.img-fit {
+    padding: 19px 17px 18px 18px;
+}
+
+@media (max-width: 525px) {
+    #root > section > aside {
+        height: 100%;
+        position: absolute;
+    }
+    .sider-layout {
+        height: 100vh;
+
+        z-index: 1;
+    }
+    .img-cleverfit {
+        padding: 16px 17px;
+    }
+    .img-fit {
+        display: none;
+    }
+    .side-logo_wrapper {
+        padding: 0 0 16px;
+    }
+    .side-nav_wrapper {
+        width: 106px !important;
+    }
+    #root > section > aside > div > div.side-nav_wrapper > ul > li {
+        padding: 0 0 0 10px !important;
+    }
+    #root > section > aside > div {
+        height: 100vh;
+    }
+    #root > section > aside > div > div.side-nav_wrapper > ul > li > span.ant-menu-item-icon {
+        display: none;
+    }
+
+    .ant-menu-item > img.anticon.ant-menu-item-icon {
+        display: none !important;
+    }
+    .ant-menu-item > span.ant-menu-title-content {
+        opacity: 1 !important;
+    }
+    .side-logo_wrapper {
+        padding: 0 0 16px;
+    }
+    #root > section > aside > div > div.side-nav_wrapper > ul {
+        padding-left: 0;
+    }
+    #root > section > aside > div > div.side-nav_wrapper > ul > li {
+        margin-bottom: 8px;
+    }
+    .ant-menu-title-content {
+        margin: 0 !important;
+    }
+    .side-button_mobile {
+        top: 10px;
+    }
+}

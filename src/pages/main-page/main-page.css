@@ -1,42 +1,157 @@
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+.content-layout {
+    width: 775px;
+    padding-left: 24px;
+}
+.main-layout {
+    max-width: 1440px;
+}
+.card-description {
+    margin-top: 24px;
+    background-color: #fff;
+    padding: 24px 24px 12px;
+}
+.card-description > article > ul {
+    padding: 0;
+    list-style-type: none;
+    letter-spacing: 0.5px;
+}
+#root > section > section > main > div > article > div > ul > li > span.ant-menu-title-content {
+    color: #2f54eb;
+}
+#root
+    > section
+    > section
+    > main
+    > div
+    > article:nth-child(2)
+    > div
+    > ul
+    > li
+    > span.anticon.anticon-calendar.ant-menu-item-icon
+    > svg
+    > path:nth-child(1) {
+    fill: #2f54eb;
+}
+.card-description > article > ul > li {
+    color: #061178;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.card-title {
+    margin-top: 24px;
+    background-color: #fff;
+    padding: 24px;
+}
+#root > section > section > main > article.card-title > h1 {
+    color: rgb(38, 38, 38);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 130%;
+    word-spacing: 0.6px;
+    letter-spacing: 0.4px;
+    text-align: left;
+    margin: 0;
+}
+.content-menu_wrapper {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+#root > section > section > main > div > article:nth-child(1) > div > ul {
+    border-right: 0;
+}
+#root > section > section > main > div > article:nth-child(2) > div > ul {
+    border-right: 0;
+}
+#root > section > section > main > div > article:nth-child(3) > div > ul {
+    border-right: 0;
+}
+.card-item {
+    background-color: #fff;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    width: 240px;
+    height: 101px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.card-item_text {
     text-align: center;
+    width: 100%;
+    padding: 12px 24px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0%;
 }
-
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
+@media (max-width: 1024px) {
+    .content-layout {
+        width: 100%;
+        padding: 0 24px;
     }
-    to {
-        transform: rotate(360deg);
+    .card-item {
+        width: 33%;
+        height: 100%;
+        padding-bottom: 6px;
+    }
+    .card-item_text {
+        text-align: left;
+    }
+    .content-menu_wrapper {
+        gap: 16px;
+    }
+    #root > section > section > main > article.card-title > h1 {
+        color: rgb(38, 38, 38);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 130%;
+        word-spacing: 3px;
+        text-align: left;
     }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
+@media (max-width: 525px) {
+    .main-layout {
+        position: relative;
     }
-}
-
-.card {
-    padding: 2em;
-}
-
-.read-the-docs {
-    color: #888;
+    .content-layout {
+        width: 328px;
+        margin: 0 16px;
+        padding: 0;
+    }
+    .card-description {
+        padding: 13px 16px 27px;
+    }
+    .content-menu_wrapper {
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-title {
+        padding: 16px;
+    }
+    .card-item {
+        width: 328px;
+        height: 101px;
+    }
+    .card-item_text {
+        text-align: center;
+    }
+    #root > section > section > main > div > article > div > ul > li > span.ant-menu-item-icon {
+        padding-right: 8px;
+        color: #2f54eb;
+    }
+    #root > section > section > main > article.card-title > h1 {
+        color: rgb(38, 38, 38);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 130%;
+        word-spacing: 3px;
+        text-align: left;
+    }
 }

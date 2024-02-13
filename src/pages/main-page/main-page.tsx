@@ -1,34 +1,87 @@
 import React, { useState } from 'react';
-
-import reactLogo from '/react.svg';
-import viteLogo from '/vite.svg';
-import tsLogo from '/ts.svg';
 import './main-page.css';
+import img from '../../assets/img/Main-page_light.png';
+import { Layout } from 'antd';
+
+const { Content } = Layout;
+
+import { SideBar } from '@components/side-bar/index';
+import { HeaderComponent } from '@components/header';
+import { FooterComponent } from '@components/footer';
+import { CardComponent } from '@components/common/card-content';
+import { MenuComponent } from '@components/common/nav-items';
 
 export const MainPage: React.FC = () => {
-    const [count, setCount] = useState(0);
+    const [collapsed, setCollapsed] = useState(false);
 
     return (
         <>
-            <div>
-                <a href='https://vitejs.dev' target='_blank'>
-                    <img src={viteLogo} className='logo' alt='Vite logo' />
-                </a>
-                <a href='https://react.dev' target='_blank'>
-                    <img src={reactLogo} className='logo react' alt='React logo' />
-                </a>
-                <a href='https://www.typescriptlang.org/' target='_blank'>
-                    <img src={tsLogo} className='logo' alt='TS logo' />
-                </a>
-            </div>
-            <h1>Vite + React + TS</h1>
-            <div className='card'>
-                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-                <p>
-                    Edit <code>src/pages/main-page.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
+            <Layout className='main-layout'>
+                <SideBar collapsed={collapsed} setCollapsed={setCollapsed} />
+                <Layout
+                    style={{
+                        background: ` no-repeat center/cover url(${img})`,
+                    }}
+                >
+                    <HeaderComponent />
+                    <Content className='content-layout'>
+                        <CardComponent
+                            tag='card-description'
+                            additionalUl={
+                                <ul>
+                                    <li>С CleverFit ты сможешь: </li>
+                                    <li>
+                                        — планировать свои тренировки на календаре, выбирая тип и
+                                        уровень нагрузки;
+                                    </li>
+                                    <li>
+                                        — отслеживать свои достижения в разделе статистики,
+                                        сравнивая свои результаты c нормами и рекордами;
+                                    </li>
+                                    <li>
+                                        — создавать свой профиль, где ты можешь загружать свои фото,
+                                        видео и отзывы o тренировках;
+                                    </li>
+                                    <li>
+                                        — выполнять расписанные тренировки для разных частей тела,
+                                        следуя подробным инструкциям и советам профессиональных
+                                        тренеров.
+                                    </li>
+                                </ul>
+                            }
+                        />
+                        <CardComponent
+                            tag='card-title'
+                            tagTitle='someTitle'
+                            additionalTitle='CleverFit — это не просто приложение, а твой личный помощник в мире фитнеса. Не откладывай на завтра — начни тренироваться уже сегодня!'
+                        />
+                        <div className='content-menu_wrapper'>
+                            <CardComponent
+                                tag='card-item'
+                                tagText='card-item_text'
+                                additionalText='Расписать тренировки'
+                                additionalDiv='card-item-layout'
+                                content={<MenuComponent itemIds={['2']} color='#2F54EB' />}
+                            />
+                            <CardComponent
+                                tag='card-item'
+                                tagText='card-item_text'
+                                additionalText='Назначить календарь'
+                                additionalDiv='card-item-layout'
+                                content={<MenuComponent itemIds={['1']} color='#2F54EB' />}
+                            />
+                            <CardComponent
+                                tag='card-item'
+                                tagText='card-item_text'
+                                additionalText='Заполнить профиль'
+                                additionalDiv='card-item-layout'
+                                content={<MenuComponent itemIds={['4']} color='#2F54EB' />}
+                            />
+                        </div>
+                    </Content>
+                    <FooterComponent collapsed={collapsed} setCollapsed={setCollapsed} />
+                </Layout>
+            </Layout>
         </>
     );
 };

@@ -38,6 +38,6 @@
             }
         ]
     },
-    "include": ["src"],
+    "include": ["src", "main-page"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
