@@ -6,6 +6,12 @@
 .sider-layout {
     height: auto;
 }
+#root > section > aside > div > ul {
+    border-right: 0;
+}
+#root > section > aside > div > ul > li {
+    white-space: normal;
+}
 .side-nav_wrapper {
     display: flex;
     height: 100%;
