@@ -4,15 +4,11 @@ import { EyeInvisibleOutlined, EyeTwoTone, GooglePlusOutlined } from '@ant-desig
 import { useRegUserMutation } from '@redux/service/user.api';
 import { useNavigate } from 'react-router-dom';
 import { resError } from 'src/models/types';
+import { useForm } from 'antd/lib/form/Form';
 
 const Reg: React.FC = () => {
-    const [Reg, { isLoading, error }] = useRegUserMutation();
-    const [componentDisabled, setComponentDisabled] = useState<boolean>(true);
-    const onFormLayoutChange = ({ disabled }: { disabled: boolean }) => {
-        setComponentDisabled(disabled);
-    };
+    const [Reg, { isLoading }] = useRegUserMutation();
     const navigate = useNavigate();
-
     const onFinish = async (values: any) => {
         console.log('Received values of form: ', values);
         try {
@@ -30,13 +26,30 @@ const Reg: React.FC = () => {
         }
     };
 
+    const [form] = useForm();
+    const [disabledSave, setDisabledSave] = useState(true);
+
+    const handleFormChange = () => {
+        const formErrors = form.getFieldsError();
+        const hasErrors = formErrors.some(({ errors }) => errors.length > 0);
+        const fieldsTouchedAndNotEmpty =
+            form.isFieldTouched('email') &&
+            form.getFieldValue('email') &&
+            form.isFieldTouched('password') &&
+            form.getFieldValue('password') &&
+            form.isFieldTouched('confirm') &&
+            form.getFieldValue('confirm');
+        setDisabledSave(hasErrors || !fieldsTouchedAndNotEmpty);
+    };
+
     return (
         <Form
+            form={form}
             name='normal_login'
             className='login-form'
             initialValues={{ remember: true }}
             onFinish={onFinish}
-            onValuesChange={onFormLayoutChange}
+            onFieldsChange={handleFormChange}
         >
             <Form.Item
                 name='email'
@@ -55,12 +68,33 @@ const Reg: React.FC = () => {
             </Form.Item>
             <Form.Item
                 name='password'
-                rules={[{ required: true, message: 'Пожалуйста введите ваш пароль!' }]}
-                extra={
+                help={
                     <p className='reg-password-desc'>
                         Пароль не менее 8 символов, с заглавной буквой и цифрой
                     </p>
                 }
+                rules={[
+                    {
+                        required: true,
+                        message: (
+                            <p className='reg-password-desc'>
+                                Пароль не менее 8 символов, с заглавной буквой и цифрой
+                            </p>
+                        ),
+
+                        validator(rule, value, callback) {
+                            const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+                            rule;
+                            if (!value) {
+                                callback('');
+                            } else if (!passwordRegex.test(value)) {
+                                callback('');
+                            } else {
+                                callback();
+                            }
+                        },
+                    },
+                ]}
             >
                 <Input.Password
                     iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
@@ -96,7 +130,7 @@ const Reg: React.FC = () => {
                 <Row gutter={[0, 16]}>
                     <Col span={24}>
                         <Button
-                            disabled={componentDisabled}
+                            disabled={disabledSave}
                             type='primary'
                             htmlType='submit'
                             className='login-form-button'
