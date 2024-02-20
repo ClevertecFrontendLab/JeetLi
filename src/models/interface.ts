@@ -16,3 +16,4 @@ export interface MenuComponentProps {
     itemIds: string[];
     color: string;
 }
+
