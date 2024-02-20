@@ -2,8 +2,14 @@ import { ExitIcon } from '@components/ui/graphics';
 import { MenuItem } from '../../../models/types';
 
 import { CalendarTwoTone, HeartFilled, ProfileOutlined, TrophyFilled } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 
 export const getMenuItems = (itemIds: string[], style: string): MenuItem[] => {
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem('jwtToken');
+        navigate('/auth');
+    };
     const allItems: MenuItem[] = [
         {
             key: 1,
@@ -20,6 +26,7 @@ export const getMenuItems = (itemIds: string[], style: string): MenuItem[] => {
         {
             key: 5,
             label: 'Выход',
+            onClick: () => handleLogout(),
             icon: (
                 <ExitIcon
                     style={{ borderTop: ' 1px solid rgb(240, 240, 240)', position: 'relative' }}
