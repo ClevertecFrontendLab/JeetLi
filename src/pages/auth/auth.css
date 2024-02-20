@@ -1,0 +1,51 @@
+.auth-layout {
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    max-width: 1440px;
+    height: 100%;
+}
+.auth-layout::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    backdrop-filter: blur(4px);
+    background-color: rgba(121, 156, 213, 0.5);
+}
+.auth-content_wrapper {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 539px;
+    height: 742px;
+    margin: 140px 0;
+}
+.auth-content-logo {
+    padding: 64px 115px 48px;
+}
+.auth-content-form_wrapper {
+    padding: 0 85.5px 174px;
+}
+.auth-content-tabs {
+    display: flex;
+    justify-content: space-between;
+}
+.auth-content-form_lable {
+    width: 184px;
+    text-align: center;
+}
+.reg-password-desc {
+    font-size: 12px;
+    margin: 0;
+}
+span.ant-input-group-wrapper-status-error .ant-input-group-addon {
+    color: black;
+}
+input.ant-input.ant-input-status-error {
+    border-left-color: #bfbfbf !important;
+}
