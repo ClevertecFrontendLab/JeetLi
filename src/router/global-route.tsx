@@ -2,13 +2,11 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { MainPage } from '../pages';
 import { Auth } from '@pages/auth';
 import { ProtectedRoute } from '@utils/protected-route';
-import { useAppSelector } from '@hooks/typed-react-redux-hooks';
 import LoginError from '@components/result/login-error';
 import RegError from '@components/result/reg-error';
 import RegSucsess from '@components/result/reg-sucsess';
 
 const GlobalRoute = () => {
-    const jwt = useAppSelector((state) => state.auth.jwt);
     console.log(localStorage);
     return (
         <Routes>

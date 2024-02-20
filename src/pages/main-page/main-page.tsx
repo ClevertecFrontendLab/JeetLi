@@ -13,7 +13,7 @@ import { MenuComponent } from '@components/common/nav-items';
 
 export const MainPage: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
-
+    
     return (
         <>
             <Layout className='main-layout'>
