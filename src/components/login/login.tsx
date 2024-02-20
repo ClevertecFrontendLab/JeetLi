@@ -1,16 +1,17 @@
 import React from 'react';
-
+import { setLoading, clearLoading } from '@redux/slice/loading-slice';
 import { EyeInvisibleOutlined, EyeTwoTone, GooglePlusOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { Button, Checkbox, Col, Form, Input, Row } from 'antd';
 import { useLoginMutation } from '@redux/service/user.api';
+import { useDispatch } from 'react-redux';
 
 const Login: React.FC = () => {
-    const [login, { isLoading, error }] = useLoginMutation();
-
+    const [login, { isLoading }] = useLoginMutation();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const onFinish = async (values: any) => {
-        console.log('Received values of form: ', values);
+        dispatch(setLoading());
         try {
             await login({
                 email: values.email,
@@ -20,6 +21,8 @@ const Login: React.FC = () => {
             navigate('/main');
         } catch (err) {
             navigate('/result/error-login');
+        } finally {
+            dispatch(clearLoading());
         }
     };
 

@@ -2,27 +2,30 @@ import React, { useState } from 'react';
 import { Button, Col, Form, Input, Row } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone, GooglePlusOutlined } from '@ant-design/icons';
 import { useRegUserMutation } from '@redux/service/user.api';
+import { setLoading, clearLoading } from '@redux/slice/loading-slice';
 import { useNavigate } from 'react-router-dom';
 import { resError } from 'src/models/types';
 import { useForm } from 'antd/lib/form/Form';
+import { useDispatch } from 'react-redux';
 
 const Reg: React.FC = () => {
     const [Reg, { isLoading }] = useRegUserMutation();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const onFinish = async (values: any) => {
-        console.log('Received values of form: ', values);
+        dispatch(setLoading());
         try {
-            const result = await Reg({ email: values.email, password: values.password }).unwrap();
-            console.log('Success:', result);
+            await Reg({ email: values.email, password: values.password }).unwrap();
         } catch (err) {
             const resError = err as resError;
             if (resError.status === 409) {
                 navigate('/result/error-user-exist');
-                console.log(409);
             } else {
                 navigate('/result/error');
-                console.log('Error:', resError.message || 'Unknown error');
             }
+        } finally {
+            dispatch(clearLoading());
         }
     };
 
