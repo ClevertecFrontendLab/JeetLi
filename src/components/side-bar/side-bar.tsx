@@ -44,7 +44,7 @@ export const SideBar: React.FC<collapsedType> = ({ collapsed, setCollapsed }) =>
                 </div>
                 <MenuComponent itemIds={['1', '2', '3', '4']} color='#061178' />
             </div>
-            <MenuComponent itemIds={['5']} color='#000000' />
+            <MenuComponent  itemIds={['5']} color='#000000' />
             {isMobile ? (
                 <div
                     className='side-button_mobile'
