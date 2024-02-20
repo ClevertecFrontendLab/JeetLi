@@ -85,16 +85,21 @@ const Reg: React.FC = () => {
                             </p>
                         ),
 
-                        validator(rule, value, callback) {
-                            const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
-                            rule;
-                            if (!value) {
-                                callback('');
-                            } else if (!passwordRegex.test(value)) {
-                                callback('');
-                            } else {
-                                callback();
-                            }
+                        validator(rule, value) {
+                            return new Promise((resolve, reject) => {
+                                const passwordRegex = /^(?=.*[A-Z])(?=.*\d).{8,}$/;
+                                try {
+                                    if (!value) {
+                                        reject('');
+                                    } else if (!passwordRegex.test(value)) {
+                                        reject('');
+                                    } else {
+                                        resolve('');
+                                    }
+                                } catch (error) {
+                                    reject(error);
+                                }
+                            });
                         },
                     },
                 ]}
